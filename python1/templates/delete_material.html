@@ -1,0 +1,32 @@
+<!-- templates/delete_material.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Material</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='delete_material_styles.css') }}">
+    <link rel="icon" type="x-icon" href="{{ url_for('static', filename='delete_icon.png') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Delete Learning Material</h1>
+        <form method="post">
+            <label for="material_title_to_delete">Select Material to Delete:</label>
+            <select name="material_title_to_delete" id="material_title_to_delete" required>
+                {% for material in learning_materials %}
+                <option value="{{ material['title'] }}">{{ material['title'] }}</option>
+                {% endfor %}
+            </select>
+            <br>
+            <button type="submit">Delete Material</button>
+        </form>
+        <br>
+        <a href="{{ url_for('guru_dashboard') }}">Back to Dashboard</a>
+    </div>
+</body>
+
+</html>

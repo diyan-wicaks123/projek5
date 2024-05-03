@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Learning Material</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='add_material_styles.css') }}">
+    <link rel="icon" type="x-icon" href="{{ url_for('static', filename='learning_material_icon.jpg') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Add Learning Material</h1>
+        <!-- Add this code to display the message -->
+        {% if 'message' in session %}
+        <p>{{ session.pop('message') }}</p>  <!-- Menghapus pesan dari session setelah ditampilkan -->
+        {% endif %}
+        <form action="/guru/add_material" method="post">
+            <label for="title">Title:</label><br>
+            <input type="text" id="title" name="title"><br>
+            <label for="content">Content:</label><br>
+            <textarea id="content" name="content"></textarea><br>
+            <input type="submit" value="Add Material">
+        </form>
+
+        <br>
+
+        <!-- Add a link to go back to the Guru Dashboard -->
+        <a href="/guru/dashboard">Back to Guru Dashboard</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Question</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='quiz_question_styles.css') }}">
+    <link rel="icon" type="x-icon" href="{{ url_for('static', filename='quiz_icon.jpg') }}">
+</head>
+<body>
+    <h1>Quiz Question</h1>
+    <form action="/quiz" method="post">
+        <p>{{ question.question }}</p>
+        {% for option in question.options %}
+            <input type="radio" name="answer" value="{{ option }}"> {{ option }}<br>
+        {% endfor %}
+        <input type="hidden" name="question_index" value="{{ question_index }}">
+        <input type="submit" value="Next">
+    </form>
+</body>
+</html>

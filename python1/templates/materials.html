@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Materials</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='materials_styles.css') }}">
+    <link rel="icon" type="x-icon" href="{{ url_for('static', filename='learning_material_icon.jpg') }}">
+</head>
+<body>
+    <h1>Learning Materials</h1>
+    {% for material in learning_materials %}
+    <h2>{{ material.title }}</h2>
+    <p>{{ material.content }}</p>
+    {% endfor %}
+    
+    <!-- Tambahkan tombol "Back to Dashboard" -->
+    <a href="{{ url_for('siswa_dashboard') }}">Back to Dashboard</a>
+</body>
+</html>

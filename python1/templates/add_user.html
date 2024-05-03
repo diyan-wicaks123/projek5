@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add User</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='add_user_styles.css') }}">
+    <link rel="icon" type="x-icon" href="{{ url_for('static', filename='user_icon.png') }}">
+</head>
+<body>
+    <h1>Add User</h1>
+    {% if error %}
+    <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    {% if user_added %}
+    <p style="color: green;">User '{{ user_added }}' successfully added!</p>
+    {% endif %}
+    <form action="/guru/add_user" method="post">
+        New Username: <input type="text" name="new_username"><br>
+        New Password: <input type="password" name="new_password"><br>
+        Role: <select name="new_role">
+            <option value="guru">Guru</option>
+            <option value="siswa">Siswa</option>
+        </select><br>
+        <input type="submit" value="Add User">
+    </form>
+
+    <br>
+
+    <!-- Add a link to go back to the Guru Dashboard -->
+    <a href="/guru/dashboard">Back to Guru Dashboard</a>
+</body>
+</html>

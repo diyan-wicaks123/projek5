@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='add_quiz_styles.css') }}">
+    <link rel="icon" type="x-icon" href="{{ url_for('static', filename='quiz_icon.png') }}">
+</head>
+<body>
+    <h2>Add Quiz</h2>
+    {% if quiz_added %}
+    <p style="color: green;">Data quiz berhasil ditambah.</p>
+    {% endif %}
+    <form method="POST" action="/guru/add_quiz">
+        <label for="question">Question:</label>
+        <input type="text" name="question" required><br>
+
+        <label for="options">Options:</label><br>
+        <input type="text" name="options" required><br>
+        <input type="text" name="options" required><br>
+        <input type="text" name="options" required><br>
+        <input type="text" name="options" required><br>
+
+        <label for="answer">Answer:</label>
+        <input type="text" name="answer" required><br>
+
+        <button type="submit">Add Quiz</button>
+    </form>
+    <br>
+    <a href="{{ url_for('guru_dashboard') }}">Back to Dashboard</a>
+</body>
+</html>

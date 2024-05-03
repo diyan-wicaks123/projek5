@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siswa Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='siswa_dashboard_styles.css') }}">
+    <link rel="icon" type="x-icon" href="{{ url_for('static', filename='home.jpg') }}">
+</head>
+<body>
+    <h1>Welcome, {{ session['username'] }}!</h1>
+    <ul>
+        <li><a href="/quiz"><img src="/static/quiz_icon.jpg" alt="Quiz Icon">Take Quiz</a></li>
+        <li><a href="/materials"><img src="/static/learning_material_icon.jpg" alt="Learning Material Icon">View Learning Materials</a></li>
+        <li><a href="/score"><img src="/static/view_score_icon.jpg" alt="View Score Icon">View Score</a></li>
+        <li><a href="/logout"><img src="/static/logout_icon.png" alt="Logout Icon">Logout</a></li>
+    </ul>
+</body>
+</html>

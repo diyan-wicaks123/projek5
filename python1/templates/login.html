@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- Mengimpor file CSS dari folder "static" -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" type="x-icon" href="{{ url_for('static', filename='logo1.jpg') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Menampilkan logo dari folder "static" -->
+        <img src="/static/logo1.jpg" alt="Logo" class="logo">
+        <h1>Login</h1>
+        <!-- Menampilkan pesan kesalahan jika ada -->
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+        <!-- Form untuk input username dan password -->
+        <form action="/login" method="post">
+            Username: <input type="text" name="username"><br>
+            Password: <input type="password" name="password"><br>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+</body>
+</html>
+
+<!-- <!DOCTYPE html> adalah deklarasi dokumen yang digunakan dalam dokumen HTML untuk memberi tahu browser tentang jenis dokumen yang sedang ditampilkan. -->
+
+<!-- <head> adalah elemen dalam dokumen HTML yang mendefinisikan kepala dokumen. Ini berisi informasi metadata tentang dokumen, seperti judul halaman, tautan ke stylesheet atau script, serta berbagai tag lain yang mendefinisikan karakteristik dokumen. -->
+
+<!-- <meta> adalah elemen dalam dokumen HTML yang digunakan untuk menyediakan metadata tentang halaman web. Metadata adalah informasi tentang data tertentu dalam dokumen, seperti karakter set yang digunakan, deskripsi halaman, kata kunci, dan instruksi kepada browser web.
+Beberapa atribut umum yang dapat digunakan dalam elemen <meta> termasuk:
+charset: Menentukan set karakter dokumen.
+name: Menentukan jenis informasi metadata yang diberikan, seperti "viewport" untuk mengatur tampilan halaman pada perangkat mobile atau "description" untuk memberikan deskripsi singkat tentang halaman.
+content: Nilai metadata yang terkait dengan atribut "name".-->
+
+<!-- <body> adalah elemen dalam dokumen HTML yang digunakan untuk menentukan konten utama yang akan ditampilkan dalam halaman web. Semua elemen yang terlihat oleh pengguna, seperti teks, gambar, tautan, formulir, dan elemen lainnya, ditempatkan di dalam elemen <body>.
+Isi dari elemen <body> adalah yang akan ditampilkan di jendela browser ketika halaman web dimuat. Ini mencakup semua teks, gambar, tautan, formulir, dan elemen lainnya yang membentuk konten halaman web.-->
+
+<!-- <div> adalah untuk membuat layout halaman web yang terstruktur dan mudah dimodifikasi dengan menggunakan gaya CSS. Ini memungkinkan pengembang web untuk mengatur konten halaman web ke dalam blok-blok yang berbeda, seperti header, footer, sidebar, atau bagian utama dari halaman.-->
+
+<!-- <img> adalah elemen dalam dokumen HTML yang digunakan untuk menampilkan gambar di halaman web. Ini adalah elemen inline, yang berarti gambar akan ditampilkan di dalam aliran teks dan tidak akan memulai baris baru.-->
+
+<!-- Penggunaan elemen <h1> biasanya untuk judul utama atau judul halaman, yang mendefinisikan topik atau isi dari bagian halaman tersebut. Karena <h1> memiliki bobot yang lebih besar dibandingkan dengan judul yang lebih rendah (seperti <h2>, <h3>, dan seterusnya), penggunaan yang tepat dari <h1> penting untuk struktur dan hierarki konten.-->
+
+<!-- <form> adalah elemen dalam HTML yang digunakan untuk membuat formulir interaktif yang mengizinkan pengguna untuk memasukkan data yang dapat dikirimkan ke server untuk diproses. Formulir biasanya berisi elemen-elemen seperti input teks, kotak centang, tombol radio, tombol submit, dan banyak lagi.
+Elemen <form> memiliki atribut action yang menentukan URL tempat data formulir akan dikirimkan saat pengguna menekan tombol submit, dan atribut method yang menentukan metode HTTP yang akan digunakan untuk mengirim data (biasanya GET atau POST).-->
+

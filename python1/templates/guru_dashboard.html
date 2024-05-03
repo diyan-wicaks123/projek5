@@ -1,0 +1,36 @@
+<!-- guru_dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guru Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard_styles.css') }}">
+    <link rel="icon" type="x-icon" href="{{ url_for('static', filename='home.jpg') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, <span class="welcome-message">{{ session['username'] }}</span>!</h1>
+        <ul>
+            <li><a href="/guru/add_user"><img src="/static/user_icon.png" alt="User Icon" class="icon"> Add User</a></li>
+            <li><a href="/guru/add_quiz"><img src="/static/quiz_icon.png" alt="Quiz Icon" class="icon"> Add Quiz</a></li>
+            <li><a href="/guru/add_material"><img src="/static/learning_material_icon.jpg" alt="Learning Material Icon" class="icon"> Add Learning Material</a></li>
+            <li><a href="/guru/delete_quiz"><img src="/static/delete_icon.png" alt="Delete Icon" class="icon"> Delete Quiz</a></li>
+            <li><a href="/guru/delete_material"><img src="/static/delete_icon.png" alt="Delete Material Icon" class="icon"> Delete Material</a></li>
+            <li><a href="/guru/delete_user"><img src="/static/delete_icon.png" alt="Delete User Icon" class="icon"> Delete User</a></li>
+            <li><a href="/logout"><img src="/static/logout_icon.png" alt="Logout Icon" class="icon"> Logout</a></li>
+        </ul>
+    </div>
+    
+    
+
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+    
+    
+</body>
+</html>
+
+<!-- <ul> adalah tag HTML yang digunakan untuk membuat daftar tak terurut (unordered list). Di dalam elemen <ul>, setiap item daftar diwakili oleh elemen <li> (list item)-->
+

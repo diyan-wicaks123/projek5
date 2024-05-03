@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No Quiz Available</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='no_quiz_styles.css') }}">
+    <link rel="icon" type="x-icon" href="{{ url_for('static', filename='error.png') }}">
+</head>
+<body>
+    <h1>Maaf, Soal Tidak Ada!</h1>
+    <p>Saat ini tidak ada soal kuis yang tersedia. Silakan hubungi guru Anda untuk informasi lebih lanjut.</p>
+    <a href="{{ url_for('siswa_dashboard') }}">Back to Dashboard</a>
+</body>
+</html>

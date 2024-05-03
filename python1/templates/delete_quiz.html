@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='delete_quiz_styles.css') }}">
+    <link rel="icon" type="x-icon" href="{{ url_for('static', filename='delete_icon.png') }}">
+</head>
+<body>
+    <h2>Delete Quiz</h2>
+    <form action="/guru/delete_quiz" method="post">
+        <label for="question_to_delete">Question to Delete:</label>
+        <input type="text" id="question_to_delete" name="question_to_delete" required>
+        <button type="submit">Delete Quiz</button>
+    </form>
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    <br>
+
+    <a href="/guru/dashboard">Back to Guru Dashboard</a>
+</body>
+</html>
+
+<!-- <p> adalah tag HTML yang digunakan untuk menandai sebuah paragraf dalam dokumen HTML. Paragraf dalam HTML adalah sebuah blok teks yang biasanya diakhiri oleh sebuah baris baru. Ketika sebuah halaman web dirender oleh browser, paragraf akan diatur secara otomatis dengan ruang putih atas dan bawahnya untuk memisahkannya dari elemen teks lainnya.-->
+
+<!-- <br> adalah tag HTML yang digunakan untuk membuat jeda baris (line break) dalam teks. Ini digunakan ketika Anda ingin membuat baris baru tanpa memulai paragraf baru. Tag <br> tidak memiliki tag penutup dan hanya memiliki satu elemen tunggal.-->

@@ -1,0 +1,30 @@
+<!-- score.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Score</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='score_styles.css') }}">
+    <link rel="icon" type="x-icon" href="{{ url_for('static', filename='view_score_icon.jpg') }}">
+</head>
+<body>
+    <h1>Skor Anda</h1>
+    <p>Skor: {{ user_score }}</p>
+
+    <h2>Jawaban Anda dan Jawaban Benar</h2>
+    <ul>
+        {% for question, user_answer, correct_answer in user_answers %}
+            <li>
+                <strong>{{ question }}</strong>:
+                <br>
+                Jawaban Anda: {{ user_answer }}
+                <br>
+                Jawaban Benar: {{ correct_answer }}
+            </li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('home') }}">Back to Dashboard</a>
+</body>
+</html>
